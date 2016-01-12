@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+#img_box{ width:100%; position:absolute; bottom:0; left:0; text-align:center;}
+</style>
+<script>
+window.onload=function (){
+	var oDiv=document.getElementById('img_box');
+	var aImg=oDiv.getElementsByTagName('img');
+	
+	document.onmousemove=function (ev){
+		var oEvent=ev || event;
+		for(var i=0; i<aImg.length; i++)
+		{
+			var a=oEvent.clientX-(getPos(aImg[i]).left+aImg[i].offsetWidth/2);
+			var b=oEvent.clientY-(getPos(aImg[i]).top+aImg[i].offsetHeight/2);
+			var c=Math.sqrt(a*a+b*b);
+			var scale=1-c/500;
+			(scale<0.5) && (scale=0.5);
+			
+			aImg[i].style.width=scale*128+'px';
+			aImg[i].style.height=scale*128+'px';
+		}	
+	};
+	function getPos(obj)
+	{
+		var left=0;
+		var top=0;
+		while(obj)
+		{
+			left+=obj.offsetLeft;
+			top+=obj.offsetTop;
+			
+			obj=obj.offsetParent;	
+		}
+		return {left:left,top:top};	
+	}	
+};
+</script>
+</head>
+
+<body>
+	<div id="img_box">
+		<img src="images/1.png" width="64"/>
+		<img src="images/2.png" width="64"/>
+		<img src="images/3.png" width="64"/>
+		<img src="images/4.png" width="64"/>
+		<img src="images/5.png" width="64"/>
+	</div>
+</body>
+</html>

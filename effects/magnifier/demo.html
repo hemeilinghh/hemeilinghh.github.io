@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style>
+*{ margin:0; padding:0;}
+#box{ margin-top:20px; position:relative;}
+#box .small_pic{ width:300px; height:300px; /*border:1px solid */#ccc; margin-left:10px; position:relative; background:url(images/m1.jpg) no-repeat;}
+#box .move_span{ width:100px; height:100px; background:#fff;  position:absolute; top:0; left:0; opacity:0.5; filter:alpha(opacity:50); display:none;}
+#box .mark {width:100%; height:100%; position:absolute; z-index:2; left:0px; top:0px; background:red; filter:alpha(opacity:0); opacity:0;}
+#box .big_pic{ width:300px; height:300px; /*border:1px solid #ccc;*/ position:absolute; left:320px; top:0; overflow:hidden; display:none;}
+#box .big_pic #img{position:absolute; top:0; left:0;}
+</style>
+<script src="demo.js"></script>
+</head>
+
+<body>
+<div id="box">
+	<div class="small_pic" id="small_div">
+		<span class="mark" id="mark"></span>
+		<span class="move_span" id="move_span"></span>
+	</div>
+	<div class="big_pic" id="big_div">
+		<img src="images/b1.jpg" id="img"/>
+	</div>
+</div>
+</body>
+</html>
