@@ -12,7 +12,6 @@ $(function (){
 		var oLogo=document.getElementById('img_logo');
 		var oNav=document.getElementById('nav');
 		var aA=oNav.getElementsByTagName('a');
-		/*var home_top=oBanner.offsetHeight; *///改了
 		var about_top=document.getElementById('about').offsetTop;
 		var works_top=document.getElementById('works').offsetTop;
 		var contact_top=document.getElementById('contact').offsetTop;
